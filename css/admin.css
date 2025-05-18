@@ -174,14 +174,14 @@ a {
 }
 
 #postListContainer {
-  height: 60vh;
-  overflow-y: auto;
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .grid {
@@ -364,4 +364,20 @@ a {
 
 .hidden {
   display: none !important;
+}
+.create-new-btn {
+  background-color: #1abc9c;
+  color: white;
+  font-weight: 700;
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.create-new-btn:hover {
+  background-color: #16a085;
 }

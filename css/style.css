@@ -171,7 +171,7 @@ nav {
 }
 
 .layer-back {
-  background-image: url('https://i.imgur.com/bvD6c8x.jpg'); /* Mờ và xa */
+  background-image: url('https://images.steamusercontent.com/ugc/2310974141604980016/B4EF3A7A2D1772DE26B1A6F51CE33A04FD8BB917/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'); /* Mờ và xa */
   filter: blur(2px);
   z-index: 1;
   opacity: 0.4;
@@ -566,7 +566,7 @@ footer {
   margin: 3rem auto;
   padding: 0 1rem;
   color: #eee;
-  background: #222;
+  background: #3a3a3a3a;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.9);
   text-align: center;

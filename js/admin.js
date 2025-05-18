@@ -92,7 +92,7 @@ function renderPosts() {
               <div class="date">${dateStr}</div>
               <p>${post.content}</p>
               <div class="action-btns">
-                <button class="edit-btn" onclick="editPost('${post.id}')">Sửa</button>
+                <button class="edit-btn" onclick="editPost('${post.id}');document.getElementById('postFormModal').style.display = 'flex';">Sửa</button>
                 <button class="delete-btn" onclick="deletePost('${post.id}')">Xóa</button>
               </div>
             </div>
