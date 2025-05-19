@@ -28,17 +28,7 @@ const db = getDatabase(app);
 let editId = null;
 const postListElem = document.getElementById("postList");
 // Kiểm tra đăng nhập
-const loggedInUser = localStorage.getItem('loggedInUser');
-if (!loggedInUser) {
-    alert("Bạn chưa đăng nhập!");
-    window.location.href = "index.html"; // hoặc đường dẫn tới trang đăng nhập
-}
-document.getElementById("logoutBtn").addEventListener("click", () => {
-  if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
-    localStorage.removeItem("loggedInUser");
-    window.location.href = "index.html"; // hoặc về trang đăng nhập
-  }
-});
+
 
 function getPosts(callback) {
     const postsRef = ref(db, "posts");
@@ -83,24 +73,28 @@ function renderPosts() {
         postListElem.innerHTML = "";
         posts.forEach(post => {
             const dateStr = post.createdAt ? new Date(post.createdAt).toLocaleString() : "Chưa có ngày";
+
             const div = document.createElement("div");
-            div.className = "post";
+            div.className = "code-item"; // đổi từ 'post' sang 'code-item' để hiển thị dạng grid
+
             div.innerHTML = `
-            <img src="${post.image}" alt="Ảnh bài viết" />
-            <div class="post-content">
-              <h3>${post.title}</h3>
-              <div class="date">${dateStr}</div>
-              <p>${post.content}</p>
-              <div class="action-btns">
-                <button class="edit-btn" onclick="editPost('${post.id}');document.getElementById('postFormModal').style.display = 'flex';">Sửa</button>
-                <button class="delete-btn" onclick="deletePost('${post.id}')">Xóa</button>
-              </div>
-            </div>
-          `;
+                <img src="${post.image}" alt="Ảnh bài viết" />
+                <div class="code-info">
+                    <h3>${post.title}</h3>
+                    <div class="date">${dateStr}</div>
+                    <p>${post.content}</p>
+                    <div class="action-btns">
+                        <button class="edit-btn" onclick="editPost('${post.id}');document.getElementById('postFormModal').style.display = 'flex';">Sửa</button>
+                        <button class="delete-btn" onclick="deletePost('${post.id}')">Xóa</button>
+                    </div>
+                </div>
+            `;
+
             postListElem.appendChild(div);
         });
     });
 }
+
 
 function editPost(id) {
     const postRef = ref(db, `posts/${id}`);
@@ -179,3 +173,13 @@ window.submitPost = submitPost;
 window.editPost = editPost;
 window.deletePost = deletePost;
 
+      document.getElementById('openPostFormBtn').onclick = function() {
+        document.getElementById('postFormModal').style.display = 'flex';
+      };
+      document.getElementById('closePostFormBtn').onclick = function() {
+        document.getElementById('postFormModal').style.display = 'none';
+      };
+      window.onclick = function(event) {
+        const modal = document.getElementById('postFormModal');
+        if (event.target === modal) modal.style.display = 'none';
+      };

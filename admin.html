@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Admin Dashboard - Quản lý Bài Viết</title>
-  <link rel="stylesheet" href="css/admin.css">
+
+  <link rel="stylesheet" href="css/manager.css">
 </head>
 
 <body>
@@ -14,9 +15,9 @@
       <div class="logo">LF Admin</div>
       <nav>
         <a href="#" >Dashboard</a>
-        <a href="#" class="active"> Quản lý Bài Viết</a>
-        <a href="#">Người dùng</a>
-        <a href="#">Cài đặt</a>
+        <a href="admin.html" class="active">Posts</a>
+        <a href="VersionManagerv2.html">Version</a>
+        <a href="storeManager.html">MarketPlace</a>
       </nav>
     </aside>
 
@@ -26,7 +27,7 @@
       </header>
 
       <!-- Nút mở popup -->
-      <button class="create-new-btn" id="openPostFormBtn">Thêm / Sửa Bài Viết</button>
+      <button class="bluebtn" id="openPostFormBtn">Thêm / Sửa Bài Viết</button>
 
       <!-- Popup form -->
       <div id="postFormModal" class="modal" style="display:none;">
@@ -35,9 +36,9 @@
           <section class="post-form">
             <h2>Thêm / Sửa Bài Viết</h2>
             <input type="text" id="title" placeholder="Tiêu đề bài viết" />
-            <textarea id="content" rows="5" placeholder="Nội dung bài viết"></textarea>
+            <textarea id="content" rows="5" placeholder="Nội dung bài viết" style="width: 100%;"></textarea>
 
-            <label for="imageInput">Chọn ảnh từ máy:</label>
+            <label for="imageInput"></label>
             <input type="file" id="imageInput" accept="image/*" />
 
             <label for="imageURL">Hoặc dán URL ảnh:</label>
@@ -49,35 +50,7 @@
       </div>
 
       <!-- Thêm CSS popup đơn giản -->
-      <style>
-      .modal {
-        position: fixed;
-        z-index: 1000;
-        left: 0; top: 0; width: 100%; height: 100%;
-        overflow: auto; background: rgba(0,0,0,0.4);
-        display: flex; align-items: center; justify-content: center;
-      }
-      .modal-content {
-        background: #fff; padding: 24px; border-radius: 8px; min-width: 320px; position: relative;
-      }
-      .close {
-        position: absolute; top: 8px; right: 16px; font-size: 28px; cursor: pointer;
-      }
-      </style>
 
-      <!-- Thêm JS popup -->
-      <script>
-      document.getElementById('openPostFormBtn').onclick = function() {
-        document.getElementById('postFormModal').style.display = 'flex';
-      };
-      document.getElementById('closePostFormBtn').onclick = function() {
-        document.getElementById('postFormModal').style.display = 'none';
-      };
-      window.onclick = function(event) {
-        const modal = document.getElementById('postFormModal');
-        if (event.target === modal) modal.style.display = 'none';
-      };
-      </script>
         
         <section class="post-list-section">
           <h2>Danh Sách Bài Viết</h2>
@@ -91,6 +64,7 @@
   
 
   <script type="module" src="js/admin.js"></script>
+  <script type="module" src="js/logout.js"></script>
 </body>
 
 </html>

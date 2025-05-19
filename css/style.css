@@ -171,7 +171,7 @@ nav {
 }
 
 .layer-back {
-  background-image: url('https://images.steamusercontent.com/ugc/2310974141604980016/B4EF3A7A2D1772DE26B1A6F51CE33A04FD8BB917/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'); /* Mờ và xa */
+  background-image: url('https://images3.alphacoders.com/132/thumb-1920-1321959.png'); /* Mờ và xa */
   filter: blur(2px);
   z-index: 1;
   opacity: 0.4;
